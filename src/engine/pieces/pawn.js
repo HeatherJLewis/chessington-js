@@ -9,7 +9,6 @@ export default class Pawn extends Piece {
 
   getAvailableMoves(board) {
     const currentLocation = board.findPiece(this);
-    console.log(currentLocation);
 
     const arrayOfLocations = [];
 
