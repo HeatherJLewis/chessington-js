@@ -1,11 +1,27 @@
-import Piece from './piece';
+import Piece from "./piece";
+import Square from "../square";
 
 export default class Rook extends Piece {
-    constructor(player) {
-        super(player);
-    }
+  constructor(player) {
+    super(player);
+  }
 
-    getAvailableMoves(board) {
-        return new Array(0);
+  getAvailableMoves(board) {
+    const currentLocation = board.findPiece(this);
+
+    let arrayOfLocations = [];
+    for (let i = 0; i < 8; i++) {
+      if (i === currentLocation.col) {
+        continue;
+      }
+      arrayOfLocations.push(Square.at(currentLocation.row, i));
     }
+    for (let i = 0; i < 8; i++) {
+      if (i === currentLocation.row) {
+        continue;
+      }
+      arrayOfLocations.push(Square.at(i, currentLocation.col));
+    }
+    return arrayOfLocations;
+  }
 }
