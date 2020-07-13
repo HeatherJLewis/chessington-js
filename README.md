@@ -7,6 +7,7 @@ Start program with `npm start`. This will host a server on `localhost:3000`
 
 
 Guide to the code
+Exercise completed by Lee Doughty and Heather Lewis
 =================
 
 ## Board
