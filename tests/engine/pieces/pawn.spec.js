@@ -28,5 +28,14 @@ describe("Pawn", () => {
 
       moves.should.deep.include(Square.at(6, 7));
     });
+
+    it("can move one square down", () => {
+      const pawn = new Pawn(Player.BLACK);
+      board.setPiece(Square.at(6, 6), pawn);
+
+      const moves = pawn.getAvailableMoves(board);
+
+      moves.should.deep.include(Square.at(5, 6));
+    });
   });
 });
