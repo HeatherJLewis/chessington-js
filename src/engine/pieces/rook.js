@@ -11,16 +11,12 @@ export default class Rook extends Piece {
 
     let arrayOfLocations = [];
     for (let i = 0; i < 8; i++) {
-      if (i === currentLocation.col) {
-        continue;
+      if (i !== currentLocation.col) {
+        arrayOfLocations.push(Square.at(currentLocation.row, i));
       }
-      arrayOfLocations.push(Square.at(currentLocation.row, i));
-    }
-    for (let i = 0; i < 8; i++) {
-      if (i === currentLocation.row) {
-        continue;
+      if (i !== currentLocation.row) {
+        arrayOfLocations.push(Square.at(i, currentLocation.col));
       }
-      arrayOfLocations.push(Square.at(i, currentLocation.col));
     }
     return arrayOfLocations;
   }
