@@ -17,7 +17,6 @@ export default class Pawn extends Piece {
           arrayOfLocations.push(Square.at(currentLocation.row += 1, currentLocation.col))
           arrayOfLocations.push(Square.at(currentLocation.row += 1, currentLocation.col))
         } else {
-          // arrayOfLocations[0].row += 1
           arrayOfLocations.push(Square.at(currentLocation.row += 1, currentLocation.col))
         }
       } else {
@@ -25,7 +24,6 @@ export default class Pawn extends Piece {
           arrayOfLocations.push(Square.at(currentLocation.row -= 2, currentLocation.col))
           arrayOfLocations.push(Square.at(currentLocation.row += 1, currentLocation.col))
         } else {
-          // currentLocation.row -= 1
           arrayOfLocations.push(Square.at(currentLocation.row -= 1, currentLocation.col))
         }
       }

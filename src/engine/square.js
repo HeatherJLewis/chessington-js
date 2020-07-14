@@ -8,6 +8,12 @@ export default class Square {
         return new Square(row, col);
     }
 
+    //(location.row > -1 && location.row < 8) && (location.col > -1 && location.col < 8)
+
+    checkViableMove(){
+        return (this.row > -1 && this.row < 8) && (this.col > -1 && this.col < 8) ? true : false;
+    }
+
     equals(otherSquare) {
         return !!otherSquare && this.row === otherSquare.row && this.col === otherSquare.col;
     }

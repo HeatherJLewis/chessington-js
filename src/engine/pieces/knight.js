@@ -13,7 +13,7 @@ export default class Knight extends Piece {
 
         arrayOfmoves.forEach(el => arrayOfLocations.push(Square.at(currentLocation.row + el[0], currentLocation.col + el[1])))
 
-        const arrayOfFilteredLocations = arrayOfLocations.filter(location => (location.row > -1 && location.row < 8) && (location.col > -1 && location.col < 8));
+        const arrayOfFilteredLocations = arrayOfLocations.filter(location => location.checkViableMove());
 
         return arrayOfFilteredLocations;
     }
