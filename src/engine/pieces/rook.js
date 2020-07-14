@@ -1,5 +1,5 @@
 import Piece from "./piece";
-import Square from "../square";
+import { moveVerticallyAndHorizontally } from "../genericMoves";
 
 export default class Rook extends Piece {
   constructor(player) {
@@ -8,16 +8,10 @@ export default class Rook extends Piece {
 
   getAvailableMoves(board) {
     const currentLocation = board.findPiece(this);
-
     let arrayOfLocations = [];
-    for (let i = 0; i < 8; i++) {
-      if (i !== currentLocation.col) {
-        arrayOfLocations.push(Square.at(currentLocation.row, i));
-      }
-      if (i !== currentLocation.row) {
-        arrayOfLocations.push(Square.at(i, currentLocation.col));
-      }
-    }
+
+    moveVerticallyAndHorizontally(arrayOfLocations, currentLocation);
+
     return arrayOfLocations;
   }
 }
