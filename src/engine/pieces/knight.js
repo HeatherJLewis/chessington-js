@@ -9,11 +9,11 @@ export default class Knight extends Piece {
         const currentLocation = board.findPiece(this);
         let arrayOfLocations = [];
 
-        const arrayOfmoves = [ [2, 1], [1, 2], [-1, 2], [-2, 1], [-2, -1], [-1, -2], [1, -2], [2, -1]];
+        const arrayOfmoves = [[2, 1], [1, 2], [-1, 2], [-2, 1], [-2, -1], [-1, -2], [1, -2], [2, -1]];
 
         arrayOfmoves.forEach(el => arrayOfLocations.push(Square.at(currentLocation.row + el[0], currentLocation.col + el[1])))
 
-        const arrayOfFilteredLocations = arrayOfLocations.filter(location => location.checkViableMove());
+        const arrayOfFilteredLocations = arrayOfLocations.filter(location => location.isViableMove());
 
         return arrayOfFilteredLocations;
     }
